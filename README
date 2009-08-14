@@ -1,1 +1,6 @@
-Demo app for google contact
+Demo app for Google contact
+===============================
+
+Based of the code over at http://blog.adsdevshop.com/2008/04/18/import-gmail-contacts-using-ruby-on-rails/
+
+Code is wrapped in a few classes located in the initializers folder.
