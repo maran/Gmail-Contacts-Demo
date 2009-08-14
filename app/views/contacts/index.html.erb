@@ -1,0 +1,22 @@
+<h1>Gmail - Contacts</h1>
+<% if @contacts %>
+<p><%= @contacts.length%> contact(s) found.</p>
+<table>
+	<tr>
+		<th>Name</th>
+		<th>Email</th>
+	</tr>
+	<% @contacts.each do |contact| %>
+		<tr class="<%= cycle("odd","even") %>">
+			<td>
+				<%= contact.name %>
+			</td>
+			<td>
+				<%= contact.email %>
+			</td>
+		</tr>
+	<% end %>
+</table>
+<% else %>
+	<p>No contacts found.</p>
+<% end %>
