@@ -22,7 +22,7 @@ class Google
 			http = Net::HTTP.new('www.google.com', 443)
 			http.use_ssl = true
 			path = '/accounts/AuthSubSessionToken'
-			headers = {'Authorization' => "AuthSubtoken=#{token}"}
+			headers = {'Authorization' => "AuthSub token=#{token}"}
 			resp, data = http.get(path, headers)
 
 			if resp.code == "200" 
@@ -55,7 +55,7 @@ class Google
 			# by default Google returns 50? contacts at a time.  Set max-results to very high number
 			# in order to retrieve more contacts
 			path = "/m8/feeds/contacts/default/base?max-results=10000"
-			headers = {'Authorization' => "AuthSubtoken=#{token}"}
+			headers = {'Authorization' => "AuthSub token=#{token}"}
 			resp, data = http.get(path, headers)
 
 			# extract the name and email address from the response data

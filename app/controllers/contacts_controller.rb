@@ -4,7 +4,8 @@ class ContactsController < ApplicationController
 	end
 	
 	def authorize
-		token =  Google::Authorization.exchange_singular_use_for_session_token(params[:token]) 
+		token = Google::Authorization.exchange_singular_use_for_session_token(params[:token]) 
+
 		unless token == false
 			redirect_to "http://localhost:3000/contacts?token=#{token}"
 		else
